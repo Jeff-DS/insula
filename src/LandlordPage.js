@@ -1,9 +1,9 @@
-import React from react-js
+import React from 'react'
 
-import LandlordDetailContainer from LandlordDetailContainer
-import LandlordUtilityBar from LandlordUtilityBar
-import NavBar from NavBar
-import NotificationsCarousel from NotificationsCarousel
+import LandlordDetailContainer from 'LandlordDetailContainer'
+import LandlordUtilityBar from 'LandlordUtilityBar'
+import NavBar from 'NavBar'
+import NotificationsCarousel from 'NotificationsCarousel'
 
 class LandlordPage extends React.Component {
 
@@ -12,8 +12,8 @@ class LandlordPage extends React.Component {
     // const self = this; // <-- TODO: decide about using this later
     this.handleSearchEvent = this.handleSearchEvent.bind(this);
     this.state =  {
-                    new: [],
-                    outstanding: []
+                    newIssues: [],
+                    outstandingIssues: []
                   };
   }
 
