@@ -1,9 +1,9 @@
 import React from 'react'
 
-import LandlordDetailContainer from 'LandlordDetailContainer'
-import LandlordUtilityBar from 'LandlordUtilityBar'
-import NavBar from 'NavBar'
-import NotificationsCarousel from 'NotificationsCarousel'
+import LandlordDetailContainer from './LandlordDetailContainer'
+import LandlordUtilityBar from './LandlordUtilityBar'
+import NavBar from '../reused/NavBar'
+import NotificationsCarousel from './NotificationsCarousel'
 
 class LandlordPage extends React.Component {
 

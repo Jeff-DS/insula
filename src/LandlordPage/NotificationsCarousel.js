@@ -1,6 +1,6 @@
 import React from 'react';
 
-class LandlordDetailContainer extends React.Component {
+class NotificationsCarousel extends React.Component {
     
     constructor(props) {
         super(props);
@@ -9,9 +9,9 @@ class LandlordDetailContainer extends React.Component {
     render() {
         
         return (
-            <h1> I CONTAIN DETAILS </h1>
+            <div> Notifications!!! </div>
         )
     }
 }
 
-export default LandlordDetailContainer;
+export default NotificationsCarousel;

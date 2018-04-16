@@ -1,4 +1,4 @@
-import SearchBar from 'SearchBar';
+import SearchBar from '../reused/SearchBar';
 
 import React from 'react';
 
@@ -6,20 +6,17 @@ class LandlordUtilityBar extends React.Component {
     
     constructor(props) {
         super(props);
-        this.state =  {};
     }
     
     render() {
         return (
             <div>
-                <button className="compose"></button>
-                <button className="compose"></button>
+                <button className="createBtn"></button>
+                <button className="composeBtn"></button>
                 <SearchBar />
             </div>
         );
     }
-    
-    
-    
 }
 
+export default LandlordUtilityBar;
