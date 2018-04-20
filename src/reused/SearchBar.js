@@ -10,11 +10,11 @@ class SearchBar extends React.Component {
     render(){
         return (
             <div className= "SearchBar">
-                <img src = "https://use.fontawesome.com/releases/v5.0.10/svgs/solid/search.svg" style={{width: "30px"}}/>
+                <img src = "https://use.fontawesome.com/releases/v5.0.10/svgs/solid/search.svg" />
                 <input type="text" />
             </div>
         )
     }
+    
+    
 }
-
-export default SearchBar;

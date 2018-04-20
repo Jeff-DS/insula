@@ -1,4 +1,5 @@
 import React from 'react';
+import IssueCard from 'Issue'
 
 class NotificationsCarousel extends React.Component {
     
@@ -9,7 +10,9 @@ class NotificationsCarousel extends React.Component {
     render() {
         
         return (
-            <div> Notifications!!! </div>
+            <div>
+                {this.props.issues.map(issue => <IssueCard issue={issue} />)}
+            </div>
         )
     }
 }
