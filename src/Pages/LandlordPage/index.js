@@ -29,7 +29,7 @@ class LandlordPage extends React.Component {
     return (
       <div>
         <NavBar username={this.props.username}/>
-        <NotificationsCarousel issues = />
+        <NotificationsCarousel />
         <LandlordUtilityBar searchHandler={this.handleSearchEvent}/>
         <LandlordDetailContainer />
       </div>
