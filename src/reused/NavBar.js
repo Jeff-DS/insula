@@ -1,11 +1,13 @@
 import React from 'react-js';
 
-const NavBar = (props) => (
+const NavBar = (username) => (
   <div className="NavBar">
     <div id="site-name">Insula</div>
-    <div id="username">{props.username}</div>
+    <div id="username">{username}</div>
     <div id="settings">
-      <img src="./images/settings-icon.png" />
+      <a href = "/settings">
+        <img src="./images/settings-icon.png" />
+      </a>
     </div>
   </div>
 );

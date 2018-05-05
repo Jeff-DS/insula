@@ -3,7 +3,7 @@ import React from 'react'
 import LandlordDetailContainer from './LandlordDetailContainer'
 import LandlordUtilityBar from './LandlordUtilityBar'
 import NavBar from '../reused/NavBar'
-import NotificationsCarousel from './NotificationsCarousel'
+import CardCarousel from '../reused/CardCarousel'
 
 class LandlordPage extends React.Component {
 
@@ -27,10 +27,12 @@ class LandlordPage extends React.Component {
 
   render() {
     return (
-      <NavBar username={this.props.username}/>
-      <NotificationsCarousel />
-      <LandlordUtilityBar searchHandler={this.handleSearchEvent}/>
-      <LandlordDetailContainer />
+      <div>
+        <NavBar username={this.props.username}/>
+        <NotificationsCarousel issues = />
+        <LandlordUtilityBar searchHandler={this.handleSearchEvent}/>
+        <LandlordDetailContainer />
+      </div>
     )
   }
 }

@@ -1,11 +1,11 @@
 import React from 'react-js';
 
-const RolePicker = () => (
-  <div id="RolePicker">
+const ChooseDashboard = () => (
+  <div id="ChooseDashboard">
     <h1>Welcome to Insula</h1>
     <button>Landlord Dashboard</button>
     <button>Tenant Dashboard</button>
   </div>
 )
 
-export default RolePicker;
+export default ChooseDashboard;
