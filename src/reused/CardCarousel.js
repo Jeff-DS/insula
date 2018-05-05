@@ -1,7 +1,7 @@
 import React from 'react';
-import IssueCard from 'Issue'
+import Card from 'Card'
 
-class NotificationsCarousel extends React.Component {
+class CardCarousel extends React.Component {
     
     constructor(props) {
         super(props);
@@ -11,7 +11,7 @@ class NotificationsCarousel extends React.Component {
         
         return (
             <div>
-                {this.props.issues.map(issue => <IssueCard issue={issue} />)}
+                {this.props.issues.map(<Card />)} // TODO
             </div>
         )
     }

@@ -7,7 +7,6 @@ const Card = () => {
             <span></span>
         </div>
     );
-    
 }
 
 export default Card;

@@ -16,5 +16,4 @@ class SearchBar extends React.Component {
         )
     }
     
-    
 }
