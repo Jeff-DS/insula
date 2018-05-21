@@ -3,6 +3,7 @@ import { BrowserRouter as Route, Switch, withRouter } from 'react-router-dom';
 import LandlordPage from './LandlordPage';
 import TenantPage from './TenantPage';
 import ChooseDashboardPage from './ChooseDashboardPage';
+import { getUserRoles } from './apiCalls';
 
 class HomePage extends Component {
     
@@ -12,22 +13,30 @@ class HomePage extends Component {
         this.state = {
             username: "",
             password: ""
-        }
+        };
         
         this.submitToServer = this.submitToServer.bind(this);
         this.onChange = this.onChange.bind(this);
     }
     
     submitToServer(e) {
+        e.preventDefault();
+        const roles = getUserRoles(this.state.username, this.state.password);
+        if (roles.tenant && roles.landlord) { this.history.push('choose-dashboard') }
+        else if (roles.tenant) { this.history.push('tenant') }
+        else if (roles.landlord) { this.history.push('landlord') }
+        
+        
+        
+        
+        
         // make AJAX call submitting the form
         // server should tell us whether to go to
         // tenant page, landlord page, or choosing page
         
         // fetch 
         
-        e.preventDefault();
         
-        console.log('hi');
     }
     
     onChange(e) { this.setState({[e.target.name]: e.target.value}) }
