@@ -1,11 +1,12 @@
 import React from 'react-js';
+import { BrowserRouter as withRouter } from 'react-router-dom';
 
-const ChooseDashboard = () => (
+const ChooseDashboard = ( {history: {push}} ) => (
   <div id="ChooseDashboard">
     <h1>Welcome to Insula</h1>
-    <button>Landlord Dashboard</button>
-    <button>Tenant Dashboard</button>
+    <button onClick={push('/LandlordPage')}>Landlord Dashboard</button>
+    <button onClick={push('/TenantPage')}>Tenant Dashboard</button>
   </div>
 )
 
-export default ChooseDashboard;
+export default withRouter(ChooseDashboard);
