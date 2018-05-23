@@ -2,6 +2,28 @@ const express = require("express"),
     router = express.Router(),
     helpers = require("../helpers/apiHelpers.js");
  
+router.post('/login', (req, res) => {
+    const { username, password } = req.body;
+    /*
+    TODO: authenticate, generate session token,
+    and get user's roles (tenant/landlord)
+    */
+    if (!authenticate(username, password)) {
+        res.send('Login failed');
+    };
+    const token = generateToken();
+    const roles = []
+    // ^ define this stuff
+    res.cookie('sessionId', token, {
+        'httpOnly': true,
+        'secure': true,
+        'maxAge': 1800000 // 30 min
+    });
+    res.send({
+        token: token,
+        roles: []
+    });
+});
 
 router.route('/Tenant')
     .get(helpers.getDocuments("Tenant"))
