@@ -10,9 +10,9 @@ router.post('/login', (req, res) => {
     */
     if (!authenticate(username, password)) {
         res.send('Login failed');
-    };
+    }
     const token = generateToken();
-    const roles = []
+    const roles = [];
     // ^ define this stuff
     res.cookie('sessionId', token, {
         'httpOnly': true,
