@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NavBar = (username) => (
+const NavBar = ({username}) => (
   <div className="NavBar">
     <div id="site-name">Insula</div>
     <div id="username">{username}</div>
