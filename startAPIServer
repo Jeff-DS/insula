@@ -1,2 +1,0 @@
-PORT=8081
-nodemon --exec npm run babel-node -- ./apiServer/index.js

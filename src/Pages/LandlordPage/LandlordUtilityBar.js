@@ -1,4 +1,4 @@
-import SearchBar from '../reused/SearchBar';
+import SearchBar from '../../reused/SearchBar';
 
 import React from 'react';
 

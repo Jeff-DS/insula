@@ -1,26 +1,22 @@
-const APIURL = '/api/todos/';
+const APIURL = '/api';
 
 // TODO: Endpoint should return user's role(s) (array) and a token (string)
 export async function logIn(username, password) {
     const data = JSON.stringify({   'username': username,
                                     'password': password
     });
-
-    return fetch(APIURL, {
+    return fetch(APIURL + '/login', {
         method: 'POST',
         body: data,
-        headers: new Headers({
-          'contentType': 'application/json'
+        headers: new Headers({ 'contentType': 'application/json' })
         })
         .then(response => {
             if (response.ok) { return response.json(); }
             throw Error('Error: ' + response.status + response.statusText);
         })
-        .catch(error => { throw Error('Error: ' + error.message) })
-    });
+        .catch(error => { throw Error('Error: ' + error.message) });
 }
 
-// export async function 
 export async function getTodos() {
     return fetch(APIURL)
         .then(resp => {

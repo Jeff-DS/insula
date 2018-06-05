@@ -1,28 +1,41 @@
-const express = require("express"),
-    router = express.Router(),
-    helpers = require("../helpers/apiHelpers.js");
- 
+import express, { Router } from "express";
+import * as helpers from "../helpers/apiHelpers.js";
+
+const router = express.Router(); 
+
 router.post('/login', (req, res) => {
-    const { username, password } = req.body;
-    /*
-    TODO: authenticate, generate session token,
-    and get user's roles (tenant/landlord)
-    */
-    if (!authenticate(username, password)) {
-        res.send('Login failed');
-    }
-    const token = generateToken();
-    const roles = [];
-    // ^ define this stuff
-    res.cookie('sessionId', token, {
-        'httpOnly': true,
-        'secure': true,
-        'maxAge': 1800000 // 30 min
-    });
-    res.send({
-        token: token,
-        roles: []
-    });
+    // TESTING - mocking the auth logic for now
+    //
+    console.log("Incoming POST request to '/login'");
+    const testResponse = {
+        token: '',
+        roles: ['tenant']
+    };
+    res.json(testResponse);
+    //
+    //END TESTING 
+    
+    // const { username, password } = req.body;
+    // /*
+    // TODO: authenticate, generate session token,
+    // and get user's roles (tenant/landlord)
+    // */
+    // if (!authenticate(username, password)) {
+    //     res.send('Login failed');
+    // }
+    // const token = generateToken();
+    // const roles = [];
+    // // ^ define this stuff
+    // res.cookie('sessionId', token, {
+    //     'httpOnly': true,
+    //     'secure': true,
+    //     'maxAge': 1800000 // 30 min
+    // });
+    // res.json({
+    //     token: token,   // <- TODO: Does this need to be stringified?
+    //     roles: []
+    // });
+  
 });
 
 router.route('/Tenant')
@@ -47,4 +60,4 @@ router.route('/Unit/:id')
     .delete(helpers.deleteDocument("Unit"));
 */
 
-module.exports = router;
+export default router;

@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from 'Card'
+import Card from './Card';
 
 class CardCarousel extends React.Component {
     
@@ -11,7 +11,7 @@ class CardCarousel extends React.Component {
         
         return (
             <div>
-                {this.props.issues.map(<Card />)} // TODO
+                {this.props.issues.map(() => (<Card />))} // TODO
             </div>
         )
     }

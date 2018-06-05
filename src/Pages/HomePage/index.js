@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Route, Switch, withRouter } from 'react-router-dom';
-import LandlordPage from './LandlordPage';
-import TenantPage from './TenantPage';
-import ChooseDashboardPage from './ChooseDashboardPage';
-import { logIn } from './apiCalls';
+import { BrowserRouter, Route, Switch, withRouter, Link } from 'react-router-dom';
+import LandlordPage from '../LandlordPage';
+import TenantPage from '../TenantPage';
+import ChooseDashboardPage from '../ChooseDashboardPage';
+import { logIn } from '../../apiCalls';
 
 class HomePage extends Component {
     
@@ -21,9 +21,13 @@ class HomePage extends Component {
     
     submitToServer(e) {
         e.preventDefault();
-        const {roles, token} = logIn(this.state.username, this.state.password);
-        // TODO: store the session token
-        this.history.push(roles.length > 1 ? 'choose-dashboard' : roles[0]);
+        logIn(this.state.username, this.state.password)
+            .then(result => {
+                console.log(result);
+                const {roles, token} = result;
+                // TODO: store the session token
+                this.props.history.push(roles.length > 1 ? 'choose-dashboard' : roles[0]);
+            })
         
     }
     
@@ -38,7 +42,7 @@ class HomePage extends Component {
                     name='username'
                     value={this.state.username}
                 />
-                <input 
+                <input onChange = {this.onChange} 
                     type='password'
                     name='password'
                     value={this.state.password}
@@ -47,6 +51,9 @@ class HomePage extends Component {
                 <input type='submit' value='Sign In'></input>
             </form>
             
+            <Link to = '/landlord'> Link to '/landlord' </Link>
+            <Link to = '/tenant'> Link to '/tenant' </Link>
+            
             <Route path = '/landlord' component={LandlordPage}/>
             <Route path = '/tenant' component={TenantPage}/>
             <Route path = '/choose-dashboard' component={ChooseDashboardPage}/>
@@ -54,3 +61,5 @@ class HomePage extends Component {
         )
     }
 }
+
+export default withRouter(HomePage);

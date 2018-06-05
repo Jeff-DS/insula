@@ -2,8 +2,8 @@ import React from 'react'
 
 import LandlordDetailContainer from './LandlordDetailContainer'
 import LandlordUtilityBar from './LandlordUtilityBar'
-import NavBar from '../reused/NavBar'
-import CardCarousel from '../reused/CardCarousel'
+import NavBar from '../../reused/NavBar'
+import CardCarousel from '../../reused/CardCarousel'
 
 class LandlordPage extends React.Component {
 
@@ -29,7 +29,7 @@ class LandlordPage extends React.Component {
     return (
       <div>
         <NavBar username={this.props.username}/>
-        <NotificationsCarousel />
+        <CardCarousel issues={[{}, {}]}/>
         <LandlordUtilityBar searchHandler={this.handleSearchEvent}/>
         <LandlordDetailContainer />
       </div>

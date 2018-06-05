@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from '../reused/NavBar'
+import NavBar from '../../reused/NavBar'
 
 class TenantPage extends React.Component {
     
@@ -11,7 +11,7 @@ class TenantPage extends React.Component {
         return (
             <div>
             
-                <NavBar />
+                <NavBar username="userdude123"/>
                 
                 <div> { /*TODO: ^ check drawing to see if these are right*/ }
                     <button className="MakePayment">Make Payment</button>

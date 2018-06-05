@@ -4,7 +4,7 @@
 
 const db = require("../models");
 
-exports.getDocuments = (modelName) => (req,res) => {
+export const getDocuments = (modelName) => (req,res) => {
     // Get all the documents and send them as JSON
     db[modelName].find()
     .then(foundDocuments =>{
@@ -15,7 +15,7 @@ exports.getDocuments = (modelName) => (req,res) => {
     })
 };
 
-exports.createDocument = (modelName) => (req, res) => {
+export const createDocument = (modelName) => (req, res) => {
     // Create a new document from request body, saving to db
     db[modelName].create(req.body)
     .then(newDocument => {
@@ -26,7 +26,7 @@ exports.createDocument = (modelName) => (req, res) => {
     })
 }
 
-exports.retrieveOne = (modelName) => (req, res) => {
+export const retrieveOne = (modelName) => (req, res) => {
     // Retrieve the document with id specified in query string
     db[modelName].findById(req.params.id)
     .then(foundDocument => {
@@ -35,7 +35,7 @@ exports.retrieveOne = (modelName) => (req, res) => {
     .catch(err => {res.send(err)});
 };
 
-exports.updateDocument = (modelName) => (req, res) => {
+export const updateDocument = (modelName) => (req, res) => {
     // Find the document with id specified in query string.
     // For each key value pair in req.body, set the corresponding
     // field in the document to value. 
@@ -46,7 +46,7 @@ exports.updateDocument = (modelName) => (req, res) => {
     .catch(err => {res.send(err)});
 };
 
-exports.deleteDocument = (modelName) => (req, res) => {
+export const deleteDocument = (modelName) => (req, res) => {
     // Find and delete the document with the id specified in query string
     db[modelName].remove({_id: req.params.id})
     .then(() => {
