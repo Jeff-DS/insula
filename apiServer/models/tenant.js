@@ -9,11 +9,8 @@ const tenantSchema = new mongoose.Schema({
                                         
     },
     unit: {
-        type: mongoose.Schema.Types.ObjectId, // When creating a Tenant document
-        // one of the params passed to create interface will be 
-        // the Id of the appropriate Unit document. 
-        
-        //required: "All tenants must be associated with a unit."
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Unit"
         
     },
     start_date: {
@@ -24,4 +21,4 @@ const tenantSchema = new mongoose.Schema({
 
 const Tenant = mongoose.model('Tenant', tenantSchema);
 
-module.exports = Tenant;
+export default Tenant;
