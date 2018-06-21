@@ -1,8 +1,13 @@
 const mongoose = require("mongoose");
 mongoose.set('debug', true);
+require("dotenv").config();
+
+console.log(process.env.DB_PASSWORD);
 
 // This line created the insula db when first run
-mongoose.connect('mongodb://localhost/insula'); 
+mongoose.connect("mongodb://insula-app:" + process.env.DB_PASSWORD + "@ds161162.mlab.com:61162/insula", {
+    keepAlive: true
+});
 
 // Without this next line, we would get the following message: 
 /*

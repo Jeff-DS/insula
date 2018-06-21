@@ -1,5 +1,6 @@
 const port = process.env.PORT || 3000;
 const mongoUrl = '' // TODO
+require("dotenv").config();
 
 import express from "express";
 const app = express();
@@ -30,5 +31,5 @@ app.use((req,res,next) => {
 });
 
 app.listen(port, function(){
-    console.log("Server listening on ", process.env.PORT);
+    console.log("Server listening on ", port);
 });
