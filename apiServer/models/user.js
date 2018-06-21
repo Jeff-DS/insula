@@ -7,15 +7,17 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    username: {
+    lastName: {
         type: String,
-        required: true,
-        unique: true
+        required: true
+    },
+    firstName: {
+        type: String,
+        required: true
     },
     password: {
-        type: String,
-        required: true,
-    },
+        type: String
+    }
 });
 
 // This "pre hook" lets us arrange for a function to be called
